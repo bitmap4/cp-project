@@ -1,0 +1,12 @@
+name: gpt2
+family: causal
+hf_id: gpt2
+# GPT-2 base has 12 layers + embedding layer => hidden_states has 13 entries (0..12)
+num_hidden_layers: 12
+hidden_size: 768
+# Stride for sliding-window surprisal over long contexts
+context_window: 1024
+stride: 512
+# Which layers to extract embeddings from. "all" or list of ints.
+extract_layers: all
+compute_surprisal: true

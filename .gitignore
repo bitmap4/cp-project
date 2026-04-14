@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.python-version
+
+# Hydra outputs
+outputs/
+multirun/
+.hydra/
+
+# Data / artifacts
+data/raw/
+data/processed/
+artifacts/
+features/
+results/
+*.pkl
+*.pt
+*.npz
+*.npy
+*.parquet
+
+# SLURM logs
+slurm-*.out
+slurm-*.err
+logs/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Notebooks
+.ipynb_checkpoints/

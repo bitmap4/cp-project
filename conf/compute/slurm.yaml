@@ -1,0 +1,7 @@
+name: slurm
+device: cuda
+num_gpus: 4
+num_cpus: 36
+batch_size: 32
+dataloader_workers: 8
+mixed_precision: true

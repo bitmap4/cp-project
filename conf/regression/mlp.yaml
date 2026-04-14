@@ -1,0 +1,12 @@
+name: mlp
+kind: mlp
+hidden_sizes: [256, 128]
+dropout: 0.2
+lr: 0.001
+epochs: 50
+batch_size: 256
+weight_decay: 0.0001
+early_stopping_patience: 5
+use_baseline_features: true
+use_surprisal: true
+standardize: true

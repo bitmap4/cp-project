@@ -1,0 +1,7 @@
+name: lasso
+kind: lasso
+alphas: [0.0001, 0.001, 0.01, 0.1, 1.0]
+cv_folds: 5
+use_baseline_features: true
+use_surprisal: true
+standardize: true

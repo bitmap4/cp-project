@@ -1,0 +1,23 @@
+defaults:
+  - data: natural_stories
+  - model: gpt2
+  - regression: ridge
+  - compute: local
+  - _self_
+
+seed: 42
+
+paths:
+  root: ${hydra:runtime.cwd}
+  data_dir: ${paths.root}/data
+  raw_dir: ${paths.data_dir}/raw
+  processed_dir: ${paths.data_dir}/processed
+  features_dir: ${paths.root}/features
+  results_dir: ${paths.root}/results
+  artifacts_dir: ${paths.root}/artifacts
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false

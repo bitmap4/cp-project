@@ -1,0 +1,12 @@
+name: natural_stories
+# Sources: https://github.com/languageMIT/naturalstories
+rt_url: https://raw.githubusercontent.com/languageMIT/naturalstories/master/naturalstories_RTS/processed_RTs.tsv
+words_url: https://raw.githubusercontent.com/languageMIT/naturalstories/master/naturalstories_RTS/all_stories.tok
+# Minimum number of subjects a token must have seen to be kept
+min_subjects: 5
+# RT filtering bounds (ms) for cleaning extreme values
+rt_min: 100
+rt_max: 3000
+# Train/val/test split by story_id
+test_stories: [9, 10]
+val_stories: [7, 8]

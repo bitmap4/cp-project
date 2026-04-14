@@ -1,0 +1,10 @@
+name: bert
+family: masked
+hf_id: bert-base-uncased
+num_hidden_layers: 12
+hidden_size: 768
+context_window: 512
+stride: 256
+extract_layers: all
+# Per-word masked pseudo-log-likelihood (expensive; disabled by default)
+compute_surprisal: false

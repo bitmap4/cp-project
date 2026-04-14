@@ -1,0 +1,7 @@
+name: local
+device: auto          # auto | cuda | cpu | mps
+num_gpus: 1
+num_cpus: 4
+batch_size: 8
+dataloader_workers: 2
+mixed_precision: false

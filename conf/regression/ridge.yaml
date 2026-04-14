@@ -1,0 +1,8 @@
+name: ridge
+kind: ridge                # ridge | lasso | mlp
+alphas: [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
+cv_folds: 5
+# Baseline features concatenated with embeddings
+use_baseline_features: true   # length, log-freq, position
+use_surprisal: true
+standardize: true
