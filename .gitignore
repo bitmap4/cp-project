@@ -15,9 +15,9 @@ multirun/
 # Data / artifacts
 data/raw/
 data/processed/
-artifacts/
-features/
-results/
+/artifacts/
+/features/
+/results/
 *.pkl
 *.pt
 *.npz
