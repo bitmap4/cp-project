@@ -2,9 +2,12 @@
 name = "cp-project"
 version = "0.1.0"
 description = "Predicting Human Reading Times: Causal vs. Masked Language Models on Syntactic Ambiguity"
-requires-python = ">=3.10"
+requires-python = ">=3.11,<3.14"
 dependencies = [
-    "torch>=2.1",
+    # Pinned to a CUDA 12.4 build of torch (cu124). The gnode cluster has a
+    # CUDA 12.8 driver, which is forward-compatible with cu124 but NOT with
+    # the default PyPI torch build (currently cu130). See tool.uv.sources.
+    "torch>=2.5,<2.8",
     "transformers>=4.40",
     "tokenizers>=0.15",
     "hydra-core>=1.3",
@@ -18,8 +21,23 @@ dependencies = [
     "tqdm>=4.65",
     "requests>=2.31",
     "pyarrow>=14.0",
+    "spacy>=3.7",
+    # en_core_web_trf is a transformer-based spaCy pipeline — we use it for
+    # the H1 syntactic annotator. spacy-transformers provides the backend.
+    "spacy-transformers>=1.3",
 ]
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["src*"]
+
+# Pull torch from the cu124 PyTorch index instead of PyPI so we get a build
+# compatible with the cluster's CUDA 12.8 driver. cu124 wheels exist for
+# Linux + Python 3.11/3.12/3.13.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu124" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

@@ -1,0 +1,19 @@
+story	item_id	region	zone_start	zone_end	note
+# Hand-curated ambiguity-region annotations for the Natural Stories Corpus.
+# One row per (story, zone span). Add rows to annotate garden-path, relative-
+# clause, or other ambiguity phenomena the H1 analysis should slice on.
+#
+# Columns
+# -------
+# story      integer story id (1..10), matches the `story` column in the
+#            processed word table
+# item_id    string identifier grouping onset + disambiguation + control rows
+#            that belong to the same item (e.g. "gp_01")
+# region     one of: onset, disambig, control
+# zone_start inclusive zone index of the first word in the region
+# zone_end   inclusive zone index of the last word in the region (use
+#            zone_start for single-word regions)
+# note       free text; ignored by the loader
+#
+# If this file has no data rows, scripts/h1_region_compare.py falls back to a
+# surprisal-based proxy (see src/data/regions.py).
