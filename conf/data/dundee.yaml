@@ -1,0 +1,11 @@
+name: dundee
+# Dundee Eye-Tracking Corpus (Kennedy & Pynte, 2005)
+# Place data file(s) in data/raw/dundee/ before running.
+# Expected format: TSV/CSV with columns word, text_id, word_pos, participant, GD
+rt_col: GD
+min_subjects: 3
+rt_min: 50
+rt_max: 3000
+# 20 texts total; split by text_id
+test_stories: [19, 20]
+val_stories: [17, 18]

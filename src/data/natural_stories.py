@@ -44,14 +44,24 @@ def download_corpus(raw_dir: str | Path, rt_url: str, words_url: str) -> tuple[P
 def load_rts(rt_path: str | Path, rt_min: float = 100, rt_max: float = 3000) -> pd.DataFrame:
     """Load per-subject reading times, filter extremes."""
     df = pd.read_csv(rt_path, sep="\t")
-    # Normalise column names (corpus has shifted schemas across mirrors)
     df.columns = [c.strip().lower() for c in df.columns]
+    log.info("Raw columns: %s  rows: %d  dtypes: %s", list(df.columns), len(df), df.dtypes.to_dict())
     rename = {"workerid": "subject", "subj": "subject", "item": "story", "storyid": "story"}
     df = df.rename(columns={k: v for k, v in rename.items() if k in df.columns})
+    df["rt"] = pd.to_numeric(df["rt"], errors="coerce")
+    before_rt = len(df)
+    df = df.dropna(subset=["rt"])
     df = df[(df["rt"] >= rt_min) & (df["rt"] <= rt_max)].copy()
+    log.info("After RT filter [%s, %s]: %d -> %d", rt_min, rt_max, before_rt, len(df))
     if "correct" in df.columns:
-        # Only keep comprehension-question-correct trials when that column exists.
-        df = df[df["correct"] == 1].copy()
+        df["correct"] = pd.to_numeric(df["correct"], errors="coerce")
+        n_correct = (df["correct"] == 1).sum()
+        if n_correct > 0:
+            before_correct = len(df)
+            df = df[df["correct"] == 1].copy()
+            log.info("After correct filter: %d -> %d", before_correct, len(df))
+        else:
+            log.info("Skipping correct filter: no rows with correct==1 (unique values: %s)", df["correct"].unique()[:5])
     return df[["subject", "story", "zone", "rt"]]
 
 

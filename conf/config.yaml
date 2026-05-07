@@ -12,9 +12,21 @@ paths:
   data_dir: ${paths.root}/data
   raw_dir: ${paths.data_dir}/raw
   processed_dir: ${paths.data_dir}/processed
+  annotations_dir: ${paths.data_dir}/annotations
   features_dir: ${paths.root}/features
   results_dir: ${paths.root}/results
   artifacts_dir: ${paths.root}/artifacts
+
+h1:
+  regions_file: ${paths.annotations_dir}/syntactic_regions.tsv
+  auto_fallback: true
+  auto_onset_quantile: 0.9
+  auto_disambig_offset: 1
+  n_permutations: 5000
+
+spacy_model: en_core_web_trf
+
+best_layer: null
 
 hydra:
   run:
