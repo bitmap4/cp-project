@@ -1,0 +1,103 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{hale2001,smith2013}
+\citation{goodkind2018,wilcox2020}
+\citation{radford2019}
+\citation{devlin2019}
+\citation{jawahar2019,lan2024}
+\citation{futrell2018}
+\citation{kennedy2005}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{hale2001,levy2008}
+\citation{goodkind2018}
+\citation{wilcox2020}
+\citation{jawahar2019}
+\citation{lan2024}
+\citation{merkx2021}
+\citation{futrell2018}
+\citation{kennedy2005}
+\citation{salazar2020}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Surprisal and reading times.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Layer-wise representations.}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Causal vs.\ masked models.}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Data}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Natural Stories Corpus.}{2}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Dundee Eye-Tracking Corpus.}{2}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Feature Extraction}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Regression Modelling}{2}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Region Annotation for H1}{2}{subsection.3.4}\protected@file@percent }
+\citation{kennedy2005}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Interpretability Analysis}{3}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Probing classifiers.}{3}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Activation visualisation.}{3}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Cross-Dataset Extension}{3}{subsection.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{3}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}H2: Layer-wise Prediction of Reading Times}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Layer-wise Ridge regression performance for BERT and GPT-2 on the Natural Stories Corpus. Bold indicates peak test $R^2$. Both models peak at middle layers (BERT L5, GPT-2 L4) and degrade at late layers.}}{3}{table.caption.9}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:layerwise}{{1}{3}{Layer-wise Ridge regression performance for BERT and GPT-2 on the Natural Stories Corpus. Bold indicates peak test $R^2$. Both models peak at middle layers (BERT L5, GPT-2 L4) and degrade at late layers}{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}H1: Region-Specific Model Comparison}{3}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Per-region prediction accuracy on held-out stories for H1.}}{4}{table.caption.10}\protected@file@percent }
+\newlabel{tab:h1}{{2}{4}{Per-region prediction accuracy on held-out stories for H1}{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Paired permutation test on $|\text  {resid}_\text  {GPT-2}| - |\text  {resid}_\text  {BERT}|$. Negative mean diff favours GPT-2. Both H1 directions are matched but not significant.}}{4}{table.caption.11}\protected@file@percent }
+\newlabel{tab:h1perm}{{3}{4}{Paired permutation test on $|\text {resid}_\text {GPT-2}| - |\text {resid}_\text {BERT}|$. Negative mean diff favours GPT-2. Both H1 directions are matched but not significant}{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Interpretability}{4}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Probing classifiers.}{4}{section*.13}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Probing classifier results across layers. POS accuracy peaks at early--middle layers (3--4); dependency depth $R^2$ peaks at middle layers (BERT L8, GPT-2 L6). Bold indicates peak per model.}}{4}{table.caption.12}\protected@file@percent }
+\newlabel{tab:probing}{{4}{4}{Probing classifier results across layers. POS accuracy peaks at early--middle layers (3--4); dependency depth $R^2$ peaks at middle layers (BERT L8, GPT-2 L6). Bold indicates peak per model}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Activation visualisation: POS tags.}{4}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Activation visualisation: reading-time quartiles.}{4}{section*.17}\protected@file@percent }
+\newlabel{fig:probing_bert}{{1a}{5}{BERT}{figure.caption.14}{}}
+\newlabel{sub@fig:probing_bert}{{a}{5}{BERT}{figure.caption.14}{}}
+\newlabel{fig:probing_gpt2}{{1b}{5}{GPT-2}{figure.caption.14}{}}
+\newlabel{sub@fig:probing_gpt2}{{b}{5}{GPT-2}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Layer-wise probing: POS accuracy (blue), dep-depth $R^2$ (orange), RT binary accuracy (green), $\pm 1$ SD across 3-fold CV. POS peaks early (L3--4), dep-depth peaks mid (BERT L8, GPT-2 L6), RT peaks at L4. GPT-2 shows steeper late-layer collapse for all three probes.}}{5}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:probing}{{1}{5}{Layer-wise probing: POS accuracy (blue), dep-depth $R^2$ (orange), RT binary accuracy (green), $\pm 1$ SD across 3-fold CV. POS peaks early (L3--4), dep-depth peaks mid (BERT L8, GPT-2 L6), RT peaks at L4. GPT-2 shows steeper late-layer collapse for all three probes}{figure.caption.14}{}}
+\newlabel{fig:pos_bert}{{2a}{5}{BERT L5: PCA reveals an annular structure; t-SNE separates 16 POS categories into distinct clusters, with PUNCT forming tight isolated groups and NOUN occupying the largest region}{figure.caption.16}{}}
+\newlabel{sub@fig:pos_bert}{{a}{5}{BERT L5: PCA reveals an annular structure; t-SNE separates 16 POS categories into distinct clusters, with PUNCT forming tight isolated groups and NOUN occupying the largest region}{figure.caption.16}{}}
+\newlabel{fig:pos_gpt2}{{2b}{5}{GPT-2 L4: PCA shows an elongated manifold with a function-word-to-content-word gradient; t-SNE clusters are comparably clean, with DET, ADP, and PRON forming particularly tight groups}{figure.caption.16}{}}
+\newlabel{sub@fig:pos_gpt2}{{b}{5}{GPT-2 L4: PCA shows an elongated manifold with a function-word-to-content-word gradient; t-SNE clusters are comparably clean, with DET, ADP, and PRON forming particularly tight groups}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces PCA (left half of each panel) and t-SNE (right half) projections of best-layer embeddings coloured by POS tag. Both models show clear syntactic clustering at their peak RT-predictive layers, with t-SNE revealing well-separated category islands.}}{5}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:pos}{{2}{5}{PCA (left half of each panel) and t-SNE (right half) projections of best-layer embeddings coloured by POS tag. Both models show clear syntactic clustering at their peak RT-predictive layers, with t-SNE revealing well-separated category islands}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {paragraph}{Surprisal in embedding space.}{5}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ambiguity regions in embedding space.}{5}{section*.21}\protected@file@percent }
+\citation{kennedy2005}
+\citation{jawahar2019}
+\newlabel{fig:rt_bert}{{3a}{6}{BERT L5: PCA shows Q4 (slow) tokens tending toward the outer ring; t-SNE reveals a diffuse gradient with partial Q4 clustering in certain neighbourhoods}{figure.caption.18}{}}
+\newlabel{sub@fig:rt_bert}{{a}{6}{BERT L5: PCA shows Q4 (slow) tokens tending toward the outer ring; t-SNE reveals a diffuse gradient with partial Q4 clustering in certain neighbourhoods}{figure.caption.18}{}}
+\newlabel{fig:rt_gpt2}{{3b}{6}{GPT-2 L4: PCA displays a slight Q1--Q4 gradient along the primary axis; t-SNE shows more structured RT-homogeneous neighbourhoods than BERT}{figure.caption.18}{}}
+\newlabel{sub@fig:rt_gpt2}{{b}{6}{GPT-2 L4: PCA displays a slight Q1--Q4 gradient along the primary axis; t-SNE shows more structured RT-homogeneous neighbourhoods than BERT}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces PCA and t-SNE projections coloured by reading-time quartile (Q1 = fast, Q4 = slow). Unlike POS tags (Figure~\ref {fig:pos}), RT quartiles produce a spatial gradient rather than discrete clusters, consistent with reading time being partially but not fully decodable from embeddings.}}{6}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:rt}{{3}{6}{PCA and t-SNE projections coloured by reading-time quartile (Q1 = fast, Q4 = slow). Unlike POS tags (Figure~\ref {fig:pos}), RT quartiles produce a spatial gradient rather than discrete clusters, consistent with reading time being partially but not fully decodable from embeddings}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces GPT-2 L4 embeddings coloured by surprisal quartile. PCA shows a clean gradient along PC1; t-SNE clusters high-surprisal tokens into distinct neighbourhoods. The surprisal structure is cleaner than the RT gradient (Figure~\ref {fig:rt_gpt2}), consistent with surprisal being a model-internal quantity.}}{6}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:surprisal}{{4}{6}{GPT-2 L4 embeddings coloured by surprisal quartile. PCA shows a clean gradient along PC1; t-SNE clusters high-surprisal tokens into distinct neighbourhoods. The surprisal structure is cleaner than the RT gradient (Figure~\ref {fig:rt_gpt2}), consistent with surprisal being a model-internal quantity}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Cross-Dataset Validation}{6}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{6}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why H2 succeeds.}{6}{section*.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces BERT L5 embeddings coloured by syntactic region (onset, disambiguation, control). Onset and disambiguation tokens are uniformly dispersed among controls in both PCA and t-SNE, consistent with the null H1 effect. GPT-2 L4 (not shown) displays the same pattern.}}{6}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:ambiguity}{{5}{6}{BERT L5 embeddings coloured by syntactic region (onset, disambiguation, control). Onset and disambiguation tokens are uniformly dispersed among controls in both PCA and t-SNE, consistent with the null H1 effect. GPT-2 L4 (not shown) displays the same pattern}{figure.caption.22}{}}
+\citation{wilcox2020}
+\citation{salazar2020}
+\bibstyle{plainnat}
+\bibdata{references}
+\bibcite{devlin2019}{{1}{2019}{{Devlin et~al.}}{{Devlin, Chang, Lee, and Toutanova}}}
+\bibcite{futrell2018}{{2}{2018}{{Futrell et~al.}}{{Futrell, Gibson, Tily, Blank, Vishnevetsky, Piantadosi, and Fedorenko}}}
+\bibcite{goodkind2018}{{3}{2018}{{Goodkind and Bicknell}}{{}}}
+\bibcite{hale2001}{{4}{2001}{{Hale}}{{}}}
+\bibcite{jawahar2019}{{5}{2019}{{Jawahar et~al.}}{{Jawahar, Sagot, and Seddah}}}
+\bibcite{kennedy2005}{{6}{2005}{{Kennedy and Pynte}}{{}}}
+\bibcite{lan2024}{{7}{2024}{{Lan et~al.}}{{Lan, Chen, Goodman, Gimpel, Sharma, and Soricut}}}
+\@writefile{toc}{\contentsline {paragraph}{Why H1 is null.}{7}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Causal vs.\ masked surprisal.}{7}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}\protected@file@percent }
+\bibcite{levy2008}{{8}{2008}{{Levy}}{{}}}
+\bibcite{merkx2021}{{9}{2021}{{Merkx and Frank}}{{}}}
+\bibcite{radford2019}{{10}{2019}{{Radford et~al.}}{{Radford, Wu, Child, Luan, Amodei, and Sutskever}}}
+\bibcite{salazar2020}{{11}{2020}{{Salazar et~al.}}{{Salazar, Liang, Nguyen, and Kirchhoff}}}
+\bibcite{smith2013}{{12}{2013}{{Smith and Levy}}{{}}}
+\bibcite{wilcox2020}{{13}{2020}{{Wilcox et~al.}}{{Wilcox, Gauthier, Hu, Qian, and Levy}}}
+\gdef \@abspage@last{8}
