@@ -1,34 +1,31 @@
-\documentclass[11pt,a4paper,twocolumn]{article}
+\documentclass[11pt]{article}
 
-\usepackage[margin=2.5cm]{geometry}
+\usepackage{acl}
+
 \usepackage{times}
 \usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{multirow}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{microtype}
 \usepackage{subcaption}
-\usepackage[numbers]{natbib}
-\usepackage{hyperref}
-\renewcommand{\bibsection}{\section*{References}}
-\setlength{\bibsep}{2pt}
 
 \title{Predicting Human Reading Times:\\Causal vs.\ Masked Language Models on Syntactic Ambiguity}
 
 \author{Ishaan Romil \\
   IIIT Hyderabad \\
   2023114011 \\
-  \texttt{ishaan.romil@students.iiit.ac.in}
-  \and
+  \texttt{ishaan.romil@}\\
+  \texttt{research.iiit.ac.in}
+  \And
   Abhyudit Singh \\
   IIIT Hyderabad \\
   2023114009 \\
-  \texttt{abhyudit.singh@students.iiit.ac.in}}
-
-\date{}
+  \texttt{abhyudit.singh@}\\
+  \texttt{research.iiit.ac.in}}
 
 \begin{document}
 \maketitle
@@ -40,7 +37,7 @@ We compare GPT-2 (causal) and BERT (masked) on their ability to predict self-pac
 Ridge regression from per-layer embeddings plus surprisal yields a clear middle-layer peak for both models (BERT layer~5, $R^2{=}0.383$; GPT-2 layer~4, $R^2{=}0.467$), strongly supporting H2.
 H1 is directionally matched but statistically null ($p{>}0.9$), attributable to the scarcity of strong garden-path structures in naturalistic text.
 Probing classifiers confirm that the layers most predictive of reading times are also those that best encode syntactic features: POS tagging accuracy peaks at layers~3--4, and dependency-depth prediction peaks at layers~6--8.
-We extend the pipeline to the Dundee Eye-Tracking Corpus as a cross-dataset validation and release all code for reproducibility.
+We extend the pipeline to the Dundee Eye-Tracking Corpus as a cross-dataset validation and release all code for reproducibility.\footnote{\url{https://github.com/bitmap4/cp-project}}
 \end{abstract}
 
 % =========================================================================
@@ -269,14 +266,14 @@ The staggered peak pattern---POS at layers~3--4, RT at layers~4--5, dependency d
 
 \begin{figure*}[t]
 \centering
-\begin{subfigure}[t]{0.48\textwidth}
+\begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/bert_probing_curves.png}
     \caption{BERT}
     \label{fig:probing_bert}
 \end{subfigure}
-\hfill
-\begin{subfigure}[t]{0.48\textwidth}
+\vspace{0.3em}
+\begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/gpt2_probing_curves.png}
     \caption{GPT-2}
@@ -295,14 +292,14 @@ The strong POS separability at these layers confirms that middle-layer represent
 
 \begin{figure*}[t]
 \centering
-\begin{subfigure}[t]{0.48\textwidth}
+\begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/pos_tag_L5.png}
     \caption{BERT L5: PCA reveals an annular structure; t-SNE separates 16 POS categories into distinct clusters, with PUNCT forming tight isolated groups and NOUN occupying the largest region.}
     \label{fig:pos_bert}
 \end{subfigure}
-\hfill
-\begin{subfigure}[t]{0.48\textwidth}
+\vspace{0.3em}
+\begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/pos_tag_L4.png}
     \caption{GPT-2 L4: PCA shows an elongated manifold with a function-word-to-content-word gradient; t-SNE clusters are comparably clean, with DET, ADP, and PRON forming particularly tight groups.}
@@ -321,14 +318,14 @@ The continuous rather than clustered nature of RT in embedding space aligns with
 
 \begin{figure*}[t]
 \centering
-\begin{subfigure}[t]{0.48\textwidth}
+\begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/rt_quartile_L5.png}
     \caption{BERT L5: PCA shows Q4 (slow) tokens tending toward the outer ring; t-SNE reveals a diffuse gradient with partial Q4 clustering in certain neighbourhoods.}
     \label{fig:rt_bert}
 \end{subfigure}
-\hfill
-\begin{subfigure}[t]{0.48\textwidth}
+\vspace{0.3em}
+\begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/rt_quartile_L4.png}
     \caption{GPT-2 L4: PCA displays a slight Q1--Q4 gradient along the primary axis; t-SNE shows more structured RT-homogeneous neighbourhoods than BERT.}
@@ -345,12 +342,12 @@ In PCA, the surprisal gradient aligns with the primary axis of variation, indica
 The t-SNE projection further shows that high-surprisal tokens are distributed across several distinct neighbourhoods, likely corresponding to different syntactic positions where unexpected words occur (e.g., rare content words, clause-initial tokens).
 This stronger spatial structure for surprisal compared to RT (Figure~\ref{fig:rt}) is expected: surprisal is a model-internal quantity directly reflected in the representations, while RT includes noise from cognitive and motor processes.
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/surprisal_quartile_L4.png}
+\includegraphics[width=\textwidth]{figures/surprisal_quartile_L4.png}
 \caption{GPT-2 L4 embeddings coloured by surprisal quartile. PCA shows a clean gradient along PC1; t-SNE clusters high-surprisal tokens into distinct neighbourhoods. The surprisal structure is cleaner than the RT gradient (Figure~\ref{fig:rt_gpt2}), consistent with surprisal being a model-internal quantity.}
 \label{fig:surprisal}
-\end{figure}
+\end{figure*}
 
 \paragraph{Ambiguity regions in embedding space.}
 Figure~\ref{fig:ambiguity} shows embeddings coloured by syntactic region (onset, disambiguation, control).
@@ -358,12 +355,12 @@ In both models, onset and disambiguation tokens are scattered uniformly among co
 This geometric indistinguishability is consistent with the null H1 result (Table~\ref{tab:h1perm}): the model does not represent ambiguity-onset or disambiguation tokens differently from other tokens at the representational level.
 The lack of separation likely reflects that the automatically detected garden-path structures in Natural Stories are too mild to produce distinctive representational signatures---the parser rarely commits to a wrong analysis, so these tokens are not representationally ``special.''
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/ambiguity_region_L5.png}
+\includegraphics[width=\textwidth]{figures/ambiguity_region_L5.png}
 \caption{BERT L5 embeddings coloured by syntactic region (onset, disambiguation, control). Onset and disambiguation tokens are uniformly dispersed among controls in both PCA and t-SNE, consistent with the null H1 effect. GPT-2 L4 (not shown) displays the same pattern.}
 \label{fig:ambiguity}
-\end{figure}
+\end{figure*}
 
 \subsection{Cross-Dataset Validation}
 
@@ -404,12 +401,11 @@ First, middle layers of both models substantially outperform final layers for re
 Second, the predicted region-specific advantage of causal models at ambiguity onset and masked models at disambiguation (H1) is directionally present but statistically undetectable in naturalistic text, calling for evaluation on controlled garden-path materials.
 Third, GPT-2's overall advantage over BERT reflects the alignment between its left-to-right training objective and human incremental processing, rather than representational superiority at any specific depth.
 
-Our pipeline---feature extraction, layer-wise regression, probing, and visualisation---extends to the Dundee Eye-Tracking Corpus and is fully reproducible.
+Our pipeline---feature extraction, layer-wise regression, probing, and visualisation---extends to the Dundee Eye-Tracking Corpus and is fully reproducible.\footnote{Code and data: \url{https://github.com/bitmap4/cp-project}}
 Future work should test H1 on experimentally controlled garden-path items and extend the layer-wise analysis to larger models (e.g., GPT-2 Medium/Large, RoBERTa) to test whether the middle-layer peak scales with model size.
 
 % =========================================================================
 
-\bibliographystyle{plainnat}
 \bibliography{references}
 
 \end{document}
